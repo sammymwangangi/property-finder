@@ -1,17 +1,20 @@
 <template>
   <div class="StoreFinder">
-    <div class="StoreFinder__search">
+    <!-- <div class="StoreFinder__search">
       <StoreFinderSearch @search="currentCoordinates = $event"/>
-    </div>
-    <div class="StoreFinder__grid">
-      <div class="StoreFinder__list-wrap">
-        <StoreFinderList :stores="storesOrderedByDistance"/>
-      </div>
-      <div class="StoreFinder__map-wrap">
-        <StoreFinderMap
-          :stores="storesOrderedByDistance"
-          :current-location="currentCoordinates"
-        />
+    </div> -->
+    <div class="bv-example-row">
+      <div class="StoreFinder-row">
+        <div class="StoreFinder__map-wrap">
+          <StoreFinderMap
+            :stores="storesOrderedByDistance"
+            :current-location="currentCoordinates"
+          />
+        </div>
+
+        <div class="StoreFinder__list-wrap">
+          <StoreFinderList :stores="storesOrderedByDistance"/>
+        </div>
       </div>
     </div>
   </div>
@@ -73,7 +76,7 @@ export default {
 <style lang="scss">
 @import '../assets/scss/settings/**/*';
 
-.StoreFinder__grid {
+.StoreFinder-row {
   $breakpoint: 42em;
 
   display: flex;
